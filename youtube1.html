@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            .bossall{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                border-width: 1px;
+                position: fixed;
+                width: 100%;
+                height: 80px;
+                border-bottom:solid;
+                background-color: white;
+                left: 0px;
+            }
+            .left{
+                width: 250px;
+                align-items: center;
+                display: flex;
+                margin-right: 70px;
+            }
+            
+            .yout{
+                display: inline-block;        
+                height: 70px;        
+                margin-left: 10px;
+                cursor: pointer;
+            }
+            .hamb{
+                height: 45px;
+                margin-left: 10px;
+                cursor: pointer;
+                background-color: black;
+            }
+            
+            .mid1{
+                
+                display: flex;
+                flex:1;
+                align-items: center;
+                
+            }
+            .mid{
+                max-width: 400px;
+                padding-left: 15px;
+                
+                flex: 1;
+                
+                height: 40px;
+                width: 100%;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                
+            }
+            .search{
+                height: 44px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                border-color: black;
+                margin-right: 15px;
+                cursor: pointer;
+                width: 70px;
+                margin-left: -2px;
+                position: relative;
+
+            }
+            .search .tooltip{
+                background-color: grey;
+                bottom:-40px;
+                position: absolute;
+                padding: 4px 7px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .search:hover .tooltip{
+                opacity: 1;
+            }
+            .search-pic{
+                height: 25px;
+            }
+            .mic{
+                height: 44px;
+                border: none;
+                cursor: pointer;
+                position: relative;
+            }
+            .mic .tools{
+                background-color: grey;
+                bottom:-40px;
+                position: absolute;
+                padding: 4px 7px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .mic:hover .tools{
+                opacity: 1;
+            }
+            .mic-pic{
+                height: 40px;
+            }
+            .right{
+                margin-left: 60px;
+                width: 300px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-shrink: 0;
+            }
+            .video{
+                height: 40px;
+                border: none;
+                position: relative;
+                cursor: pointer;
+            }
+            .video .record{
+                background-color: grey;
+                bottom:-40px;
+                right: -10px;
+                position: absolute;
+                padding: 4px 7px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .video:hover .record{
+                opacity: 1;
+            }
+            .video-pic{
+                height: 30px;
+            }
+            .notifi{
+                height: 40px;
+                border: none;
+                cursor: pointer;
+                position: relative;
+            }
+            .notifi .notification{
+                background-color: grey;
+                bottom:-40px;
+                right: -17px;
+                position: absolute;
+                padding: 4px 7px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .notifi:hover .notification{
+                opacity: 1;
+            }
+            .noti-pic{
+                height: 30px;
+            }
+            .channel{
+                height: 40px;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                margin-right: 15px;
+            }
+            .channel .chann{
+                background-color: grey;
+                bottom:-40px;
+                right: 4px;
+                position: absolute;
+                padding: 4px 7px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .channel:hover .chann{
+                opacity: 1;
+            }
+            .channel-pic{
+                height: 30px;
+            }
+
+
+            .sidebar{
+                
+                width: 100px;
+
+            }
+            .menu-1{
+                display: flex;
+                height: 50px;
+                align-items: center;
+                cursor: pointer;
+            }
+            .home-pi{
+                height: 50px;
+                cursor: pointer;
+            }
+            .but-1{
+                width: 70px;
+                cursor: pointer;
+                height: 50px;
+                
+            }
+
+        .image-tip{
+            width: 100%;
+        }
+        
+        .searchs{
+            width: 950px;
+            display: inline-block;
+            vertical-align: top;
+            border-color: gray;
+        }
+        .div-1st{
+            margin-top: 90px;
+            cursor: pointer;
+            
+        }
+        .div-2nd{
+            margin-top: 90px;
+            
+            cursor: pointer;
+            
+            
+        }
+        .div-3rd{
+            margin-top: 90px;
+            cursor: pointer;
+            
+        }
+        .small-div{
+            display: grid;
+            grid-template-columns: 50px 1fr;
+        }
+        .vid-info{
+            margin-left: 8px;
+        }
+        .vid-title{
+            margin-top: 0px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+        .channel-prof{
+            width: 50px;
+            border-radius: 25px;
+        }
+        
+        .channel-nam{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            opacity: 0.7;
+        }
+        .viewed{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            opacity: 0.7;
+        }
+        .vid-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 15px;
+            top: 60px;
+            padding-left: 120px;
+        }
+
+    
+
+        
+    </style>
+
+    </head>
+
+
+
+
+    <body style="margin: 0px;
+    height: 1000px;
+    ">
+        
+
+        <div class="allts">
+        <div class="bossall" style="z-index: 100;">
+            <div class="left">
+                <img class="hamb" src="hamburger.png">
+                <img class="yout" src="youtubelogo.png">
+            </div>
+            <div class="mid1">
+                <input class="mid" type="text" placeholder="Search here">
+                <div >
+                    <button class="search">
+                        <img class="search-pic" src="search.png">
+                        <div class ="tooltip">
+                            search
+                        </div>
+                    </button>
+                    
+                </div>
+                
+                <button class="mic" style="margin-left: 40px;">
+                    <img class="mic-pic" src="mic.png">
+                    <div class="tools">
+                        voice
+                    </div>
+                </button>
+            </div> 
+            <div class="right">
+                <button class="video">
+                    <img class="video-pic" src="video.png">
+                    <div class="record">
+                        record
+                    </div>
+                </button>    
+                <button class="notifi">
+                    <img class="noti-pic" src="notifi.png">
+                    <div class="notification">
+                        notifications
+                    </div>
+                </button>
+                <button class="channel">
+                    <img class="channel-pic" src="elon.jpg">
+                    <div class="chann">
+                        channel
+                    </div>
+                </button>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="sidebar" 
+        style="margin:0px;
+               top:85px;
+               
+               position: fixed;
+               bottom: 0px;">
+               <div class="menu-1">
+                    <img class="home-pi" src="home.png">
+                  <button class="but-1">Home</button>
+                  
+               </div>
+
+               <div class="menu-1">
+                <img class="home-pi" src="home.png">
+              <button class="but-1">Home</button>
+                </div>
+
+                <div class="menu-1">
+                    <img class="home-pi" src="home.png">
+                  <button class="but-1">Home</button>
+               </div>
+
+               <div class="menu-1">
+                <img class="home-pi" src="home.png">
+                <button class="but-1">Home</button>
+                </div>
+
+           <div class="menu-1">
+            <img class="home-pi" src="home.png">
+            <button class="but-1">Home</button>
+            </div>
+            <div class="menu-1">
+                <img class="home-pi" src="home.png">
+                <button class="but-1">Home</button>
+            </div>
+                <div class="menu-1">
+                    <img class="home-pi" src="home.png">
+                    <button class="but-1">Home</button>
+            </div>
+                    <div class="menu-1">
+                        <img class="home-pi" src="home.png">
+                        <button class="but-1">Home</button>
+                    </div>
+                        <div class="menu-1">
+                            <img class="home-pi" src="home.png">
+                            <button class="but-1">Home</button>
+                        </div>
+                            <div class="menu-1">
+                                <img class="home-pi" src="home.png">
+                                <button class="but-1">Home</button>
+                            </div>
+                                <div class="menu-1">
+                                  <img class="home-pi" src="home.png">
+                                    <button class="but-1">Home</button>
+                                </div>
+                                    <div class="menu-1">
+                                        <img class="home-pi" src="home.png">
+                                        <button class="but-1">Home</button>
+                                    </div>
+                                        <div class="menu-1">
+                                            <img class="home-pi" src="home.png">
+                                            <button class="but-1">Home</button>
+                                        </div>
+                                            <div class="menu-1">
+                                                <img class="home-pi" src="home.png">
+                                                <button class="but-1">Home</button>
+                                            </div>
+        </div>
+
+
+
+
+
+
+        <div class="vid-grid">
+            <div class="div-1st">
+                <div style="position: relative;">
+                    <img class= "image-tip" src="unnamed.png">    
+                    <div class="times" 
+                    style="position:absolute;
+                            right:10px;
+                            background-color: black;
+                            padding: 5px 5px;
+                            color: white;
+                            bottom:10px;  ">
+                        22:20
+                    </div>
+                </div>
+                
+                
+                <p class="vid-info">
+                    Embedded Systems EXPLAINED.
+                </p>
+                <p class="channel-nam">
+                    Show your strength in embedded systems & IOT with 4 individual certificates.
+                </p>
+            </div>
+    
+    
+            <div class="div-2nd">
+                
+                <div class="thumbnail" style="position: relative;">
+                    <img class= "image-tip" src="hq720.webp">
+                    
+                    <div class="times" 
+                    style="position:absolute;
+                            right:10px;
+                            background-color: black;
+                            padding: 5px 5px;
+                            color: white;
+                            bottom:10px;  ">
+                        24:20
+                    </div>
+                </div>
+                <div class="small-div">
+                    <div class="channel-pic">
+                        <img class="channel-prof" src="unnamed.jpg">
+                    </div>
+                    <div class="vid-info">
+                        <p class="vid-title">
+                            HTML & CSS Full Course - Beginner to Pro
+                        </p>
+                        <p class="channel-nam">
+                            SuperSimpleDev
+                        </p>
+                        <p class="viewed">
+                            4.5M views &#183;
+                            1 year ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="div-3rd">
+                <div class="thumbnail" style="position: relative;">
+                    <img class= "image-tip" src="hqdefault.webp">
+                    <div class="times" 
+                    style="position:absolute;
+                            right:10px;
+                            background-color: black;
+                            padding: 5px 5px;
+                            color: white;
+                            bottom:10px;  ">
+                        16:20
+                    </div>
+                </div>
+                <div class="small-div">
+                    <div class="channel-pic">
+                        <img class="channel-prof" src="unnamed (1).jpg">
+                    </div>
+                    <div class="vid-info">
+                        <p class="vid-title">
+                            Mahabharat - 24th June 2014 : Ep 221 - Bhishma surrenders to Krishna
+                            </p>
+                        <p class="channel-nam">
+                            StarPlus
+                        </p>
+                        <p class="viewed">
+                            4M views &#183;
+                        8 years ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="div-1st">
+            
+                <div style="position: relative;">
+                    <img class= "image-tip" src="unnamed.png">    
+                    <div class="times" 
+                    style="position:absolute;
+                            right:10px;
+                            background-color: black;
+                            padding: 5px 5px;
+                            color: white;
+                            bottom:10px;  ">
+                        29:20
+                    </div>
+                </div>
+                
+                <p class="vid-info">
+                    Embedded Systems EXPLAINED.
+                </p>
+                <p class="channel-nam">
+                    Show your strength in embedded systems & IOT with 4 individual certificates.
+                </p>
+            </div>
+    
+    
+            <div class="div-2nd">
+                
+                <div class="thumbnail" style="position: relative;">
+                    <img class= "image-tip" src="hq720.webp">
+                    <div class="times" 
+                    style="position:absolute;
+                            right:10px;
+                            background-color: black;
+                            padding: 5px 5px;
+                            color: white;
+                            bottom:10px;  ">
+                        10:20
+                    </div>
+                </div>
+                <div class="small-div">
+                    <div class="channel-pic">
+                        <img class="channel-prof" src="unnamed.jpg">
+                    </div>
+                    <div class="vid-info">
+                        <p class="vid-title">
+                            HTML & CSS Full Course - Beginner to Pro
+                        </p>
+                        <p class="channel-nam">
+                            SuperSimpleDev
+                        </p>
+                        <p class="viewed">
+                            4.5M views &#183;
+                            1 year ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="div-3rd">
+                <div class="thumbnail" style="position: relative;">
+                    <img class= "image-tip" src="hqdefault.webp">
+                    <div class="times" 
+                    style="position:absolute;
+                            right:10px;
+                            background-color: black;
+                            padding: 5px 5px;
+                            color: white;
+                            bottom:10px;  ">
+                        18:20
+                    </div>
+                </div>
+                <div class="small-div">
+                    <div class="channel-pic">
+                        <img class="channel-prof" src="unnamed (1).jpg">
+                    </div>
+                    <div class="vid-info">
+                        <p class="vid-title">
+                            Mahabharat - 24th June 2014 : Ep 221 - Bhishma surrenders to Krishna
+                            </p>
+                        <p class="channel-nam">
+                            StarPlus
+                        </p>
+                        <p class="viewed">
+                            4M views &#183;
+                        8 years ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </body>
+</html>
